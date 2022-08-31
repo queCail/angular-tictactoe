@@ -1,15 +1,9 @@
-.cell {
-    width: 25vw;
-    height: 25vw;
-    border: 2px solid black;
-}
-
 .cell-button{
     background-color: #dbce79;
     color: #58534c;
     width: 100%;
     height: 100%;
     line-height: 100%;
-    font-size: 18vw;
-
+    font-size: 3vw;
+    margin: 2px;
 }

@@ -1,0 +1,19 @@
+<main class="d-flex flex-column align-items-center justify-content-center">
+    <h1>Current Player: {{ player }} </h1>
+
+    <div class="board">
+        <app-cell 
+            style="border: 1px solid black; align-self: center"
+            *ngFor="let val of cells; let i = index" 
+            [value]="val"
+            (click)="makeMove(i)"> 
+        </app-cell>
+    </div>
+
+
+    <h2 *ngIf="winner">
+        Player {{ winner }} won the game!
+    </h2>
+
+    <button (click)="newGame()">Start new Game</button>
+</main>

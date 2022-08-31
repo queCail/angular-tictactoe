@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { CellService } from './cell.service';
 
 @Component({
@@ -6,31 +6,13 @@ import { CellService } from './cell.service';
   templateUrl: './cell.component.html',
   styleUrls: ['./cell.component.css']
 })
-export class CellComponent implements OnInit {
-
-  played: boolean = false;
-  disabled: boolean = false;
+export class CellComponent{
 
 
-  constructor(private CellService: CellService, private changeDetector: ChangeDetectorRef) { }
+  constructor() { }
 
-  ngOnInit(): void {
+  @Input() value!: 'X' | 'O';
 
-  }
-
-  nextPlay(): string {
-    return this.CellService.nextSymbol();
-  }
-
-  newSymbol():void{
-    this.played=! this.played; 
-    this.disabled=! this.disabled; 
-    this.CellService.newSymbol();
-    console.log(this.CellService.symbols)       
-  }
-  freeze(): void{
-    this.changeDetector.detach();
-  }
 }
 
 

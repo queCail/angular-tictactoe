@@ -1,0 +1,13 @@
+main{
+    border: 1px solid black;
+    height: 80vh;
+    width: 80vw;
+}
+
+.board {
+    background-color: #58534c;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-gap: 5px;
+    border: 1px solid black;
+}

@@ -1,4 +1,3 @@
-<div class="cell">
-    <button class="cell-button" [disabled]="disabled" (click)="newSymbol();">{{played?nextPlay():""}}</button>
-</div>
-
+<button class="cell-button" *ngIf="!value">{{ value }}</button>
+<button class="cell-button" *ngIf="value == 'X'">{{ value }}</button>
+<button class="cell-button" *ngIf="value == 'O'">{{ value }}</button>
