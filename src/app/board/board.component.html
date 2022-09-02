@@ -3,7 +3,6 @@
 
     <div class="board">
         <app-cell 
-            style="border: 1px solid black; align-self: center"
             *ngFor="let val of cells; let i = index" 
             [value]="val"
             (click)="makeMove(i)"> 
@@ -11,9 +10,12 @@
     </div>
 
 
-    <h2 *ngIf="winner">
-        Player {{ winner }} won the game!
-    </h2>
+    <div class="winner-container d-flex align-items-center justify-content-center m-1">
+        <h2 *ngIf="winner">
+            Player {{ winner }} won the game!
+        </h2>
+    </div>
 
-    <button (click)="newGame()">Start new Game</button>
+    <button class="newgame-button" (click)="newGame()">Start new Game</button>
+
 </main>
