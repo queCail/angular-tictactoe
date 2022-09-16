@@ -1,11 +1,16 @@
-<main class="d-flex flex-column align-items-center justify-content-center">
+<div class=" outter-container d-flex flex-column align-items-center justify-content-center">
+    
+    <div  class="back-button-container d-flex">
+        <app-back-button style="align-self: flex-start;"></app-back-button>
+    </div>
+    
     <h1>Current Player: {{ player }} </h1>
 
-    <div class="board">
+    <div [ngClass] = "{'board': !winner, 'board-winner': winner}">
         <app-cell 
             *ngFor="let val of cells; let i = index" 
             [value]="val"
-            (click)="makeMove(i)"> 
+            (click)="makeMove(i)">
         </app-cell>
     </div>
 
@@ -14,8 +19,13 @@
         <h2 *ngIf="winner">
             Player {{ winner }} won the game!
         </h2>
+
+        <h2 *ngIf="!winner && plays > 9">
+            It's a draw!
+        </h2>
     </div>
 
-    <button class="newgame-button" (click)="newGame()">Start new Game</button>
+    <button class="newgame-button" (click)="newGame()">START NEW GAME</button>
+</div>
 
-</main>
+

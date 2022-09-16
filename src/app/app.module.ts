@@ -6,6 +6,7 @@ import { StartButtonComponent } from './start-button/start-button.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CellComponent } from './cell/cell.component';
 import { BoardComponent } from './board/board.component';
+import { BackButtonComponent } from './back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { BoardComponent } from './board/board.component';
     StartButtonComponent,
     HomepageComponent,
     CellComponent,
-    BoardComponent
+    BoardComponent,
+    BackButtonComponent
   ],
   imports: [
     BrowserModule,

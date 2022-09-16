@@ -3,9 +3,11 @@ button{
     color: #f1d3ab;
     border: 2px solid #58534c;
     border-radius: 2.3vw;
-    width: 23vw;
-    height: 10vh;
-    font-size: 2vw;
+    width: 180px;
+    height: 8vh;
+    font-size: 5ew;
+    font-weight: bold;
+    margin-bottom: auto;
 }
 
 button:hover{

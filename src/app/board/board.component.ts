@@ -11,6 +11,7 @@ export class BoardComponent implements OnInit {
   cells!: any[];
   xIsNext!: boolean;
   winner!: string;
+  plays: number = 1;
 
   constructor() {}
 
@@ -22,6 +23,7 @@ export class BoardComponent implements OnInit {
     this.cells = Array(9).fill(null);
     this.winner = '';
     this.xIsNext = true;
+    this.plays = 1;
   }
 
   get player() {
@@ -33,7 +35,7 @@ export class BoardComponent implements OnInit {
       this.cells.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
     }
-
+    
     this.winner = this.calculateWinner();
   }
 
@@ -48,6 +50,7 @@ export class BoardComponent implements OnInit {
       [0, 4, 8],
       [2, 4, 6]
     ];
+
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (
@@ -57,7 +60,11 @@ export class BoardComponent implements OnInit {
       ) {
         return this.cells[a];
       }
+      
     }
+    
+    this.plays += 1;
+
     return '';
   }
 }
